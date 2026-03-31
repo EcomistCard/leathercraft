@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AM Leathercraft — Stamps, Cutting Dies & Patterns for Leatherworkers</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM — AM LEATHERCRAFT
+   Industrial Craft Aesthetic: Dark leather, warm brass, precision
+   ============================================================ */
+:root {
+  --black:       #0d0b09;
+  --off-black:   #141210;
+  --card:        #1a1714;
+  --border:      #2a2520;
+  --border-mid:  #3a3028;
+  --white:       #f5f0e8;
+  --cream:       #ede5d8;
+  --parchment:   #d8cdb8;
+  --muted:       #7a6e60;
+  --brass:       #b8913a;
+  --brass-light: #d4ad5a;
+  --brass-dim:   #6a5020;
+  --rust:        #9a4020;
+  --steel:       #4a5560;
+  --green:       #3a5a3a;
+
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-body:    'IBM Plex Sans', sans-serif;
+
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:20px;
+  --s6:24px; --s8:32px; --s10:40px; --s12:48px;
+  --s16:64px; --s20:80px; --s24:96px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ============================================================
+   ANNOUNCEMENT
+   ============================================================ */
+.ann{
+  background:var(--brass);
+  padding:10px 0;
+  overflow:hidden;
+}
+.ann-track{
+  display:inline-flex;
+  gap:72px;
+  animation:ticker 26s linear infinite;
+  white-space:nowrap;
+}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ann-item{
+  font-family:var(--font-body);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--black);
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.ann-dot{width:4px;height:4px;background:rgba(13,11,9,0.35);border-radius:50%;flex-shrink:0}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav{
+  position:sticky;
+  top:0;
+  z-index:500;
+  background:rgba(13,11,9,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1440px;
+  margin:0 auto;
+  padding:0 var(--s12);
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--s8);
+}
+.nav-logo{
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
+}
+.nav-logo-main{
+  font-family:var(--font-display);
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--white);
+  line-height:1;
+}
+.nav-logo-main span{color:var(--brass)}
+.nav-logo-sub{
+  font-size:8px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:400;
+  margin-top:3px;
+}
+.nav-links{
+  display:flex;
+  gap:var(--s6);
+  list-style:none;
+}
+.nav-links>li>a{
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:500;
+  transition:color 0.2s;
+  padding:4px 0;
+  position:relative;
+}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:var(--white)}
+.nav-links>li>a.active::after{
+  content:'';
+  position:absolute;
+  bottom:-4px;
+  left:0;right:0;
+  height:1px;
+  background:var(--brass);
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:var(--s5);
+  flex-shrink:0;
+}
+.nav-right a{
+  font-size:11px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-weight:400;
+  transition:color 0.2s;
+}
+.nav-right a:hover{color:var(--white)}
+.nav-cart{
+  background:var(--brass) !important;
+  color:var(--black) !important;
+  padding:9px 20px !important;
+  font-size:10px !important;
+  letter-spacing:0.16em !important;
+  font-weight:600 !important;
+  transition:background 0.2s !important;
+}
+.nav-cart:hover{background:var(--brass-light) !important}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  max-width:1440px;
+  margin:0 auto;
+  padding:var(--s6) var(--s12) 0;
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:var(--s4);
+  min-height:580px;
+}
+.hero-main{
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+}
+.hero-main-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.65) saturate(0.8);
+  transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.hero-main:hover .hero-main-img{transform:scale(1.03)}
+.hero-main-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(13,11,9,0.85) 0%,rgba(13,11,9,0.3) 60%,transparent 100%);
+}
+.hero-main-content{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:var(--s12) var(--s12) var(--s12);
+}
+.hero-tag{
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:var(--s4);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:var(--s3);
+}
+.hero-tag::before{content:'';display:block;width:24px;height:1px;background:var(--brass)}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(40px,4.5vw,62px);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:0.01em;
+  color:var(--white);
+  margin-bottom:var(--s4);
+}
+.hero-title em{font-style:italic;color:var(--brass-light);display:block}
+.hero-sub{
+  font-size:14px;
+  color:rgba(245,240,232,0.6);
+  line-height:1.75;
+  max-width:400px;
+  margin-bottom:var(--s8);
+  letter-spacing:0.03em;
+}
+.hero-ctas{display:flex;gap:var(--s4);flex-wrap:wrap}
+.btn-primary{
+  display:inline-block;
+  background:var(--brass);
+  color:var(--black);
+  padding:13px 30px;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:background 0.2s,transform 0.15s;
+  border:1.5px solid var(--brass);
+}
+.btn-primary:hover{background:var(--brass-light);border-color:var(--brass-light);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-block;
+  background:transparent;
+  color:var(--white);
+  padding:12px 28px;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  border:1.5px solid rgba(245,240,232,0.2);
+  transition:all 0.2s;
+}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
+.hero-stats{
+  display:flex;
+  gap:var(--s10);
+  margin-top:var(--s10);
+  padding-top:var(--s8);
+  border-top:1px solid rgba(245,240,232,0.1);
+}
+.stat-n{
+  font-family:var(--font-display);
+  font-size:32px;
+  font-weight:700;
+  color:var(--brass);
+  line-height:1;
+}
+.stat-l{
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.hero-side{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:var(--s4);
+}
+.hero-side-card{
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+}
+.hero-side-card img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.6) saturate(0.75);
+  transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.4s;
+}
+.hero-side-card:hover img{transform:scale(1.05);filter:brightness(0.75)}
+.hero-side-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,11,9,0.85),transparent 55%);
+}
+.hero-side-info{
+  position:absolute;
+  bottom:var(--s5);
+  left:var(--s6);
+  right:var(--s6);
+}
+.hero-side-cat{
+  font-size:9px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:3px;
+  font-weight:500;
+}
+.hero-side-name{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:3px;
+  line-height:1.2;
+}
+.hero-side-price{
+  font-size:12px;
+  color:var(--parchment);
+  letter-spacing:0.08em;
+}
+.hero-side-btn{
+  position:absolute;
+  top:var(--s4);
+  right:var(--s4);
+  background:rgba(184,145,58,0.9);
+  color:var(--black);
+  font-size:9px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:6px 12px;
+  font-weight:600;
+  opacity:0;
+  transition:opacity 0.2s;
+}
+.hero-side-card:hover .hero-side-btn{opacity:1}
+
+/* ============================================================
+   TRUST BAR
+   ============================================================ */
+.trust-bar{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--off-black);
+}
+.trust-inner{
+  max-width:1440px;
+  margin:0 auto;
+  padding:0 var(--s12);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+.trust-item{
+  display:flex;
+  align-items:center;
+  gap:var(--s4);
+  padding:var(--s6) var(--s6);
+  border-right:1px solid var(--border);
+}
+.trust-item:last-child{border-right:none}
+.trust-icon{
+  width:36px;height:36px;
+  background:rgba(184,145,58,0.1);
+  border:1px solid var(--brass-dim);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  flex-shrink:0;
+}
+.trust-title{
+  font-size:11px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--white);
+  margin-bottom:2px;
+}
+.trust-desc{font-size:11px;color:var(--muted);letter-spacing:0.03em}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section{max-width:1440px;margin:0 auto;padding:var(--s20) var(--s12)}
+.sec-label{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s3)}
+.sec-line{width:20px;height:2px;background:var(--brass)}
+.sec-tag{
+  font-size:10px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+}
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:var(--s12);
+}
+.sec-title{
+  font-family:var(--font-display);
+  font-size:clamp(34px,3.5vw,48px);
+  font-weight:700;
+  letter-spacing:0.02em;
+  color:var(--white);
+  line-height:1.05;
+}
+.sec-title em{font-style:italic;color:var(--brass-light)}
+.view-all{
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--brass);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:gap 0.2s;
+  border-bottom:1px solid var(--brass-dim);
+  padding-bottom:2px;
+}
+.view-all:hover{gap:10px;border-color:var(--brass)}
+
+/* ============================================================
+   CATEGORY GRID
+   ============================================================ */
+.cat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-rows:220px 220px;
+  gap:3px;
+}
+.cat-big{grid-column:1/3;grid-row:1/3}
+.cat-card{
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+  display:block;
+}
+.cat-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.55) saturate(0.7);
+  transition:transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.4s;
+}
+.cat-card:hover .cat-img{transform:scale(1.07);filter:brightness(0.7)}
+.cat-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,11,9,0.88) 0%,rgba(13,11,9,0.2) 55%);
+}
+.cat-info{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:var(--s6) var(--s6) var(--s6);
+}
+.cat-name{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:3px;
+  letter-spacing:0.02em;
+}
+.cat-big .cat-name{font-size:32px}
+.cat-sub{
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.45);
+}
+.cat-count{
+  display:inline-block;
+  background:var(--brass);
+  color:var(--black);
+  font-size:9px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  margin-top:var(--s3);
+  font-weight:600;
+}
+.cat-arrow{
+  position:absolute;
+  top:var(--s5);right:var(--s5);
+  width:32px;height:32px;
+  background:rgba(184,145,58,0.15);
+  border:1px solid rgba(184,145,58,0.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--brass);
+  font-size:14px;
+  opacity:0;
+  transition:opacity 0.2s;
+}
+.cat-card:hover .cat-arrow{opacity:1}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:3px;
+}
+.prod-grid.three{grid-template-columns:repeat(3,1fr)}
+
+.p-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  position:relative;
+  transition:border-color 0.25s,transform 0.25s;
+}
+.p-card:hover{
+  border-color:var(--brass-dim);
+  transform:translateY(-3px);
+}
+.p-card:hover .p-img{transform:scale(1.05)}
+.p-card:hover .p-cta{opacity:1;transform:translateY(0)}
+.p-card:hover .p-wish{opacity:1}
+
+.p-img-wrap{
+  aspect-ratio:1;
+  overflow:hidden;
+  position:relative;
+  background:#0f0d0b;
+}
+.p-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.85) saturate(0.9);
+  transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.p-badge{
+  position:absolute;
+  top:var(--s3);left:var(--s3);
+  background:var(--brass);
+  color:var(--black);
+  font-size:9px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:4px 9px;
+  font-weight:600;
+}
+.p-badge.custom{background:var(--rust);color:var(--white)}
+.p-badge.sale{background:var(--green);color:var(--white)}
+.p-badge.pdf{background:var(--steel);color:var(--white)}
+.p-wish{
+  position:absolute;
+  top:var(--s3);right:var(--s3);
+  width:30px;height:30px;
+  background:rgba(13,11,9,0.7);
+  border:1px solid var(--border-mid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;
+  color:var(--muted);
+  opacity:0;
+  transition:opacity 0.2s;
+  cursor:pointer;
+}
+.p-cta{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  background:rgba(184,145,58,0.95);
+  color:var(--black);
+  text-align:center;
+  padding:12px;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:600;
+  opacity:0;
+  transform:translateY(5px);
+  transition:opacity 0.25s,transform 0.25s;
+  cursor:pointer;
+}
+.p-info{padding:var(--s5) var(--s5) var(--s6)}
+.p-cat{
+  font-size:9px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:5px;
+  font-weight:500;
+}
+.p-name{
+  font-family:var(--font-display);
+  font-size:15px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:var(--s3);
+  line-height:1.35;
+  letter-spacing:0.01em;
+}
+.p-desc{
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:var(--s4);
+  letter-spacing:0.03em;
+}
+.p-price-row{
+  display:flex;
+  align-items:baseline;
+  gap:var(--s3);
+  padding-top:var(--s4);
+  border-top:1px solid var(--border);
+}
+.p-price{
+  font-size:16px;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:0.06em;
+}
+.p-orig{
+  font-size:12px;
+  color:var(--muted);
+  text-decoration:line-through;
+}
+.p-save{
+  font-size:9px;
+  background:rgba(58,90,58,0.4);
+  color:#8cc88c;
+  padding:2px 7px;
+  letter-spacing:0.08em;
+}
+
+/* ============================================================
+   BUNDLE BANNER
+   ============================================================ */
+.bundle-banner-wrap{
+  max-width:1440px;
+  margin:0 auto;
+  padding:0 var(--s12);
+}
+.bundle-banner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  overflow:hidden;
+  min-height:420px;
+  border:1px solid var(--border);
+}
+.bundle-img{
+  position:relative;
+  overflow:hidden;
+}
+.bundle-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.55) saturate(0.75);
+  transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.bundle-banner:hover .bundle-img img{transform:scale(1.04)}
+.bundle-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 50%,var(--card) 100%);
+}
+.bundle-content{
+  background:var(--card);
+  padding:var(--s16) var(--s12);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.bundle-tag{
+  font-size:10px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:var(--s5);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:var(--s3);
+}
+.bundle-tag::before{content:'';display:block;width:18px;height:2px;background:var(--brass)}
+.bundle-title{
+  font-family:var(--font-display);
+  font-size:clamp(36px,3.5vw,52px);
+  font-weight:700;
+  line-height:1;
+  color:var(--white);
+  margin-bottom:var(--s4);
+}
+.bundle-title em{font-style:italic;color:var(--brass-light);display:block}
+.bundle-desc{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.8;
+  max-width:320px;
+  margin-bottom:var(--s6);
+  letter-spacing:0.03em;
+}
+.bundle-price{
+  display:flex;
+  align-items:baseline;
+  gap:var(--s4);
+  margin-bottom:var(--s8);
+  padding:var(--s5) var(--s6);
+  background:rgba(184,145,58,0.08);
+  border:1px solid var(--brass-dim);
+  width:fit-content;
+}
+.bundle-sale{
+  font-family:var(--font-display);
+  font-size:42px;
+  font-weight:700;
+  color:var(--brass);
+  line-height:1;
+}
+.bundle-was{
+  font-size:16px;
+  color:var(--muted);
+  text-decoration:line-through;
+  letter-spacing:0.04em;
+}
+.bundle-pct{
+  font-size:12px;
+  background:rgba(58,90,58,0.5);
+  color:#8cc88c;
+  padding:4px 10px;
+  font-weight:600;
+  letter-spacing:0.08em;
+}
+.bundle-list{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s3);
+  margin-bottom:var(--s8);
+}
+.bundle-item{
+  font-size:12px;
+  color:var(--parchment);
+  display:flex;
+  align-items:center;
+  gap:var(--s3);
+  letter-spacing:0.04em;
+}
+.bundle-item::before{content:'—';color:var(--brass);font-size:10px}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:var(--off-black);
+  padding:16px 0;
+  overflow:hidden;
+}
+.mq-track{
+  display:inline-flex;
+  gap:56px;
+  animation:ticker 30s linear infinite;
+  white-space:nowrap;
+}
+.mq-item{
+  font-family:var(--font-display);
+  font-size:18px;
+  font-weight:400;
+  font-style:italic;
+  color:var(--border-mid);
+  letter-spacing:0.04em;
+}
+.mq-item.lit{color:var(--brass-dim)}
+
+/* ============================================================
+   BEST SELLERS
+   ============================================================ */
+.bestsellers{background:var(--off-black);padding:var(--s20) 0}
+.bestsellers-inner{max-width:1440px;margin:0 auto;padding:0 var(--s12)}
+
+/* ============================================================
+   CUSTOM ORDER SECTION
+   ============================================================ */
+.custom-section{
+  max-width:1440px;
+  margin:0 auto;
+  padding:var(--s20) var(--s12);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s4);
+  align-items:stretch;
+}
+.custom-content{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:var(--s16) var(--s12);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.custom-content .sec-tag{margin-bottom:var(--s4)}
+.custom-title{
+  font-family:var(--font-display);
+  font-size:clamp(34px,3.5vw,50px);
+  font-weight:700;
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:var(--s5);
+}
+.custom-title em{font-style:italic;color:var(--brass-light);display:block}
+.custom-body{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.8;
+  max-width:380px;
+  margin-bottom:var(--s8);
+  letter-spacing:0.03em;
+}
+.custom-steps{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s5);
+  margin-bottom:var(--s10);
+}
+.custom-step{
+  display:flex;
+  gap:var(--s5);
+  align-items:flex-start;
+}
+.step-num{
+  width:32px;height:32px;
+  background:rgba(184,145,58,0.12);
+  border:1px solid var(--brass-dim);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:14px;
+  font-weight:700;
+  color:var(--brass);
+  flex-shrink:0;
+}
+.step-text-title{
+  font-size:12px;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  margin-bottom:3px;
+}
+.step-text-desc{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+  letter-spacing:0.03em;
+}
+.custom-img{
+  position:relative;
+  overflow:hidden;
+  background:var(--card);
+}
+.custom-img img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.6) saturate(0.75);
+  transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.custom-section:hover .custom-img img{transform:scale(1.04)}
+.custom-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 60%,var(--card) 100%);
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--s4);
+}
+.test-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:var(--s8);
+  position:relative;
+}
+.test-quote{
+  position:absolute;
+  top:var(--s5);right:var(--s6);
+  font-family:var(--font-display);
+  font-size:64px;
+  color:var(--border-mid);
+  line-height:1;
+  font-weight:700;
+}
+.test-stars{
+  display:flex;
+  gap:2px;
+  margin-bottom:var(--s5);
+}
+.star{color:var(--brass);font-size:12px}
+.test-text{
+  font-family:var(--font-display);
+  font-size:16px;
+  font-weight:400;
+  font-style:italic;
+  color:var(--parchment);
+  line-height:1.75;
+  margin-bottom:var(--s6);
+  letter-spacing:0.02em;
+}
+.test-author{
+  display:flex;
+  align-items:center;
+  gap:var(--s4);
+  padding-top:var(--s5);
+  border-top:1px solid var(--border);
+}
+.test-av{
+  width:36px;height:36px;
+  background:var(--brass-dim);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:14px;
+  font-weight:700;
+  color:var(--brass-light);
+}
+.test-name{
+  font-size:12px;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:2px;
+}
+.test-product{font-size:10px;color:var(--muted);letter-spacing:0.04em}
+.test-check{margin-left:auto;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#6a9a6a}
+
+/* ============================================================
+   NEWSLETTER
+   ============================================================ */
+.nl-section{
+  background:var(--off-black);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:var(--s20) 0;
+  position:relative;
+  overflow:hidden;
+}
+.nl-section::after{
+  content:'AM';
+  position:absolute;
+  right:-40px;top:50%;
+  transform:translateY(-50%);
+  font-family:var(--font-display);
+  font-size:280px;
+  font-weight:700;
+  color:rgba(184,145,58,0.04);
+  letter-spacing:0.1em;
+  pointer-events:none;
+  line-height:1;
+}
+.nl-inner{
+  max-width:580px;
+  margin:0 auto;
+  padding:0 var(--s12);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.nl-eyebrow{
+  font-size:10px;
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:var(--s5);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--s4);
+}
+.nl-eyebrow::before,.nl-eyebrow::after{content:'';display:block;width:20px;height:1px;background:var(--brass)}
+.nl-title{
+  font-family:var(--font-display);
+  font-size:clamp(32px,3.5vw,46px);
+  font-weight:700;
+  color:var(--white);
+  line-height:1.1;
+  margin-bottom:var(--s4);
+}
+.nl-title em{font-style:italic;color:var(--brass-light)}
+.nl-desc{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:var(--s8);
+  letter-spacing:0.04em;
+}
+.nl-form{display:flex;max-width:420px;margin:0 auto}
+.nl-input{
+  flex:1;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border-mid);
+  border-right:none;
+  padding:13px 18px;
+  color:var(--white);
+  font-family:var(--font-body);
+  font-size:12px;
+  outline:none;
+  transition:border-color 0.2s;
+  letter-spacing:0.06em;
+}
+.nl-input::placeholder{color:var(--muted)}
+.nl-input:focus{border-color:var(--brass-dim)}
+.nl-btn{
+  background:var(--brass);
+  border:1px solid var(--brass);
+  color:var(--black);
+  padding:13px 24px;
+  font-family:var(--font-body);
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.2s;
+  white-space:nowrap;
+}
+.nl-btn:hover{background:var(--brass-light)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  background:#080705;
+  border-top:1px solid var(--border);
+  padding:var(--s16) 0 var(--s8);
+}
+.footer-inner{max-width:1440px;margin:0 auto;padding:0 var(--s12)}
+.footer-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:var(--s16);
+  padding-bottom:var(--s12);
+  border-bottom:1px solid var(--border);
+  margin-bottom:var(--s8);
+}
+.f-logo-main{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:3px;
+  display:block;
+}
+.f-logo-main span{color:var(--brass)}
+.f-logo-sub{
+  font-size:9px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:var(--s6);
+  display:block;
+}
+.f-desc{
+  font-size:13px;
+  color:rgba(245,240,232,0.3);
+  line-height:1.8;
+  max-width:240px;
+  margin-bottom:var(--s8);
+  letter-spacing:0.03em;
+}
+.f-socials{display:flex;gap:var(--s2)}
+.f-soc{
+  width:34px;height:34px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;
+  color:var(--muted);
+  transition:all 0.2s;
+}
+.f-soc:hover{background:var(--brass);border-color:var(--brass);color:var(--black)}
+.f-col-title{
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.4);
+  font-weight:500;
+  margin-bottom:var(--s6);
+}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:var(--s3)}
+.f-links a{font-size:13px;color:rgba(245,240,232,0.25);letter-spacing:0.04em;transition:color 0.2s}
+.f-links a:hover{color:var(--brass)}
+.footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:var(--s6);
+  border-top:1px solid var(--border);
+}
+.f-copy{font-size:11px;color:rgba(245,240,232,0.15);letter-spacing:0.08em}
+.f-pays{display:flex;gap:var(--s2)}
+.f-pay{
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  padding:4px 9px;
+  font-size:9px;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.2);
+}
+
+/* ============================================================
+   SPEC & MOBILE PANEL
+   ============================================================ */
+.spec-section{
+  background:var(--off-black);
+  border-top:1px solid var(--border);
+  padding:var(--s20) 0;
+}
+.spec-inner{max-width:1440px;margin:0 auto;padding:0 var(--s12)}
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--s5);
+  margin-top:var(--s10);
+}
+.spec-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:var(--s8);
+}
+.spec-title-sm{
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:var(--s6);
+  font-weight:500;
+}
+.swatch{display:flex;align-items:center;gap:var(--s3);margin-bottom:var(--s3)}
+.sw-circle{width:26px;height:26px;border-radius:50%;border:1px solid var(--border);flex-shrink:0}
+.sw-name{font-size:11px;font-weight:500;color:var(--white);margin-bottom:1px}
+.sw-hex{font-size:10px;color:var(--muted);letter-spacing:0.06em}
+
+.mobile-section{
+  background:var(--black);
+  border-top:1px solid var(--border);
+  padding:var(--s20) 0;
+}
+.mobile-inner{max-width:1440px;margin:0 auto;padding:0 var(--s12)}
+.mobile-grid{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:var(--s16);
+  align-items:start;
+  margin-top:var(--s10);
+}
+.mobile-desc-title{
+  font-family:var(--font-display);
+  font-size:40px;
+  font-weight:700;
+  color:var(--white);
+  line-height:1.05;
+  margin-bottom:var(--s5);
+}
+.mobile-desc-title em{font-style:italic;color:var(--brass-light)}
+.mobile-body{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:var(--s8);letter-spacing:0.04em}
+.mobile-specs{display:flex;flex-direction:column;gap:var(--s3)}
+.mob-spec{font-size:12px;color:var(--parchment);display:flex;align-items:flex-start;gap:var(--s3)}
+.mob-spec::before{content:'—';color:var(--brass);flex-shrink:0}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5)}
+.phone{background:var(--off-black);border-radius:26px;padding:10px;border:1px solid var(--border)}
+.phone-screen{background:var(--black);border-radius:18px;overflow:hidden;aspect-ratio:9/19;display:flex;flex-direction:column}
+.ph-nav{background:var(--off-black);border-bottom:1px solid var(--border);padding:9px 12px;display:flex;align-items:center;justify-content:space-between}
+.ph-logo{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--white)}
+.ph-logo span{color:var(--brass)}
+.ph-hero{flex-shrink:0;height:150px;background:var(--card);position:relative;overflow:hidden}
+.ph-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.55)}
+.ph-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,11,9,0.9),transparent)}
+.ph-hero-text{position:absolute;bottom:10px;left:10px}
+.ph-htag{font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass);margin-bottom:3px}
+.ph-htitle{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--white);line-height:1.05}
+.ph-content{padding:10px;flex:1;background:var(--card)}
+.ph-sec{font-size:7px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.ph-pgrid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.ph-p{background:var(--black);border:1px solid var(--border);overflow:hidden}
+.ph-pimg{height:55px;background:var(--off-black);overflow:hidden}
+.ph-pimg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.65)}
+.ph-pinfo{padding:5px 6px}
+.ph-pname{font-family:var(--font-display);font-size:9px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:2px}
+.ph-pprice{font-size:8px;color:var(--brass);letter-spacing:0.06em}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fu{animation:fadeUp 0.65s cubic-bezier(0.25,0.46,0.45,0.94) both;opacity:0}
+.d1{animation-delay:.1s}.d2{animation-delay:.22s}.d3{animation-delay:.34s}
+.d4{animation-delay:.46s}.d5{animation-delay:.58s}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">
+  <div class="ann-track">
+    <span class="ann-item"><span class="ann-dot"></span>Custom stamps made from your logo or design</span>
+    <span class="ann-item"><span class="ann-dot"></span>Japanese steel cutting dies — ships worldwide</span>
+    <span class="ann-item"><span class="ann-dot"></span>The Big Bundle: 60 patterns for $97 (was $350)</span>
+    <span class="ann-item"><span class="ann-dot"></span>Free PDF patterns available — no signup needed</span>
+    <span class="ann-item"><span class="ann-dot"></span>Custom stamps made from your logo or design</span>
+    <span class="ann-item"><span class="ann-dot"></span>Japanese steel cutting dies — ships worldwide</span>
+    <span class="ann-item"><span class="ann-dot"></span>The Big Bundle: 60 patterns for $97 (was $350)</span>
+    <span class="ann-item"><span class="ann-dot"></span>Free PDF patterns available — no signup needed</span>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="nav-logo-main">AM<span>·</span>Leathercraft</span>
+      <span class="nav-logo-sub">Stamps · Dies · Patterns</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Stamps & Alphabets</a></li>
+      <li><a href="#">Cutting Dies</a></li>
+      <li><a href="#">Patterns</a></li>
+      <li><a href="#">Big Bundles</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#">Search</a>
+      <a href="#">Account</a>
+      <a href="#" class="nav-cart">Cart (0)</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <img class="hero-main-img"
+      src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670"
+      alt="Custom Leather Stamps">
+    <div class="hero-main-overlay"></div>
+    <div class="hero-main-content">
+      <div class="hero-tag fu">Precision Tools for Leatherworkers</div>
+      <h1 class="hero-title fu d1">
+        Craft with<br>
+        <em>Precision & Pride</em>
+      </h1>
+      <p class="hero-sub fu d2">Custom brass stamps, Japanese steel cutting dies, and professional PDF patterns — designed by a leatherworker, for leatherworkers. Ship worldwide.</p>
+      <div class="hero-ctas fu d3">
+        <a href="#" class="btn-primary">Shop All Tools</a>
+        <a href="#" class="btn-ghost">Custom Order</a>
+      </div>
+      <div class="hero-stats fu d4">
+        <div><div class="stat-n">100%</div><div class="stat-l">Brass Stamps</div></div>
+        <div><div class="stat-n">JP</div><div class="stat-l">Steel Dies</div></div>
+        <div><div class="stat-n">60+</div><div class="stat-l">PDF Patterns</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-side">
+    <div class="hero-side-card">
+      <img src="https://am-leathercraft.com/cdn/shop/files/Watchstraps_1_480x480.jpg?v=1693791369"
+        alt="Cutting Die Set Watch Strap">
+      <div class="hero-side-overlay"></div>
+      <div class="hero-side-info">
+        <div class="hero-side-cat">Cutting Dies</div>
+        <div class="hero-side-name">Watch Strap Die Set</div>
+        <div class="hero-side-price">From $125</div>
+      </div>
+      <div class="hero-side-btn">View →</div>
+    </div>
+    <div class="hero-side-card">
+      <img src="https://am-leathercraft.com/cdn/shop/files/COVERRENDERcopy_c3f8b176-d956-41d9-a438-ef8bf7981872_480x480.jpg?v=1694945542"
+        alt="Big PDF Bundle">
+      <div class="hero-side-overlay"></div>
+      <div class="hero-side-info">
+        <div class="hero-side-cat">Big Bundle — 72% Off</div>
+        <div class="hero-side-name">60 Patterns Bundle</div>
+        <div class="hero-side-price">$97 <span style="font-size:10px;color:var(--muted);text-decoration:line-through">$350</span></div>
+      </div>
+      <div class="hero-side-btn">Shop →</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">⚙</div>
+      <div><div class="trust-title">Japanese Steel</div><div class="trust-desc">Precision cutting dies</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">✦</div>
+      <div><div class="trust-title">Custom Made</div><div class="trust-desc">Send us your logo or design</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">✈</div>
+      <div><div class="trust-title">Ships Worldwide</div><div class="trust-desc">Fast international delivery</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">▶</div>
+      <div><div class="trust-title">Video Tutorials</div><div class="trust-desc">Every pattern includes a guide</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">What We Make</span></div>
+  <div class="sec-head">
+    <h2 class="sec-title">Shop by <em>Category</em></h2>
+  </div>
+  <div class="cat-grid">
+    <a href="#" class="cat-card cat-big">
+      <img class="cat-img"
+        src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670"
+        alt="Custom Leather Stamps">
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Custom Stamps & Alphabets</div>
+        <div class="cat-sub">Brass · Hot & Cold · Any logo or design</div>
+        <div class="cat-count">From $57</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </a>
+    <a href="#" class="cat-card">
+      <img class="cat-img"
+        src="https://am-leathercraft.com/cdn/shop/files/SlimWalletCuttingDies_1_480x480.jpg?v=1747463946"
+        alt="Cutting Dies">
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Cutting Dies</div>
+        <div class="cat-sub">Stock & Custom — Japanese Steel</div>
+        <div class="cat-count">From $105</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </a>
+    <a href="#" class="cat-card">
+      <img class="cat-img"
+        src="https://am-leathercraft.com/cdn/shop/collections/Untitled-28_1024x1024_5b1cc9ad-3bb5-49ae-a060-a486530fed74_480x480.jpg?v=1755607445"
+        alt="Leather Tools">
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Leather Tools</div>
+        <div class="cat-sub">Stencils & specialist tools</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </a>
+    <a href="#" class="cat-card">
+      <img class="cat-img"
+        src="https://am-leathercraft.com/cdn/shop/collections/DSCF5180_copy_copy_1024x1024_c7e72825-0789-4e1c-b3f8-0a7c4ba5b830_480x480.jpg?v=1679993942"
+        alt="PDF Patterns">
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">PDF Patterns</div>
+        <div class="cat-sub">Wallets, bags, straps & more</div>
+        <div class="cat-count">Free options available</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </a>
+    <a href="#" class="cat-card">
+      <img class="cat-img"
+        src="https://am-leathercraft.com/cdn/shop/files/COVERRENDERcopy_c3f8b176-d956-41d9-a438-ef8bf7981872_480x480.jpg?v=1694945542"
+        alt="Big Bundles">
+      <div class="cat-overlay"></div>
+      <div class="cat-info">
+        <div class="cat-name">Big Bundles</div>
+        <div class="cat-sub">60+ patterns · Up to 72% off</div>
+        <div class="cat-count">From $49</div>
+      </div>
+      <div class="cat-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="mq-track">
+    <span class="mq-item">Custom Leather Stamps</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Japanese Steel Dies</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">PDF Patterns with Video Tutorials</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Wallet · Watch Strap · Bag Templates</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Ships Worldwide</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Custom Leather Stamps</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Japanese Steel Dies</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">PDF Patterns with Video Tutorials</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Wallet · Watch Strap · Bag Templates</span>
+    <span class="mq-item lit">◆</span>
+    <span class="mq-item">Ships Worldwide</span>
+  </div>
+</div>
+
+<!-- FEATURED — CUTTING DIES -->
+<section class="section">
+  <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Precision Tools</span></div>
+  <div class="sec-head">
+    <h2 class="sec-title">Cutting <em>Dies</em></h2>
+    <a href="#" class="view-all">View All Cutting Dies →</a>
+  </div>
+  <div class="prod-grid">
+
+    <div class="p-card">
+      <div class="p-img-wrap">
+        <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/Watchstraps_1_480x480.jpg?v=1693791369" alt="Watch Strap Die Set">
+        <div class="p-wish">♡</div>
+        <div class="p-cta">View Product</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Cutting Dies — Watch Straps</div>
+        <div class="p-name">Cutting Die Set — Watch Strap</div>
+        <div class="p-desc">8 sizes available. Cut precise watch strap leather in seconds.</div>
+        <div class="p-price-row"><span class="p-price">From $125</span></div>
+      </div>
+    </div>
+
+    <div class="p-card">
+      <div class="p-img-wrap">
+        <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/HorizontalandVerticalcardpocketClickingdieset_480x480.jpg?v=1682843217" alt="Wallet Pockets Die Set">
+        <div class="p-wish">♡</div>
+        <div class="p-cta">View Product</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Cutting Dies — Wallets</div>
+        <div class="p-name">Cutting Die Set — Wallet Pockets</div>
+        <div class="p-desc">Horizontal and vertical card pocket dies for consistent results.</div>
+        <div class="p-price-row"><span class="p-price">From $105</span></div>
+      </div>
+    </div>
+
+    <div class="p-card">
+      <div class="p-img-wrap">
+        <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/2cigarCase_cuttingDies_480x480.jpg?v=1698976334" alt="Cigar Case Die Set">
+        <div class="p-wish">♡</div>
+        <div class="p-cta">View Product</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Cutting Dies — Cigar Cases</div>
+        <div class="p-name">Cutting Die Set — 2 & 3 Stick Cigar Case</div>
+        <div class="p-desc">Cut the full cigar case set with one precise tool.</div>
+        <div class="p-price-row"><span class="p-price">From $135</span></div>
+      </div>
+    </div>
+
+    <div class="p-card">
+      <div class="p-img-wrap">
+        <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/Bifoldcardholder_480x480.jpg?v=1686221879" alt="Bifold Card Holder">
+        <div class="p-badge">New</div>
+        <div class="p-wish">♡</div>
+        <div class="p-cta">View Product</div>
+      </div>
+      <div class="p-info">
+        <div class="p-cat">Cutting Dies — Card Holders</div>
+        <div class="p-name">Cutting Die Set — Bifold Card Holder</div>
+        <div class="p-desc">Complete die set for a clean bifold card holder in one click.</div>
+        <div class="p-price-row"><span class="p-price">$149</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE BIG BUNDLE BANNER -->
+<div class="bundle-banner-wrap">
+  <div class="bundle-banner">
+    <div class="bundle-img">
+      <img src="https://am-leathercraft.com/cdn/shop/files/COVERRENDERcopy_c3f8b176-d956-41d9-a438-ef8bf7981872_480x480.jpg?v=1694945542" alt="Big Bundle">
+      <div class="bundle-img-overlay"></div>
+    </div>
+    <div class="bundle-content">
+      <div class="bundle-tag">Best Value</div>
+      <h2 class="bundle-title">The Big<br><em>Leather Bundle</em></h2>
+      <p class="bundle-desc">60 professional-grade PDF patterns in one download. 196 pages covering wallets, bags, watch straps, card holders, coin pouches and more.</p>
+      <div class="bundle-price">
+        <span class="bundle-sale">$97</span>
+        <span class="bundle-was">$350</span>
+        <span class="bundle-pct">Save 72%</span>
+      </div>
+      <div class="bundle-list">
+        <div class="bundle-item">60 complete pattern templates</div>
+        <div class="bundle-item">196 pages of detailed instructions</div>
+        <div class="bundle-item">Wallets, bags, straps, pouches & more</div>
+        <div class="bundle-item">Video tutorials included</div>
+        <div class="bundle-item">Instant PDF download</div>
+      </div>
+      <a href="#" class="btn-primary" style="display:inline-block;width:fit-content">Get The Bundle — $97</a>
+    </div>
+  </div>
+</div>
+
+<!-- BEST SELLERS — STAMPS -->
+<div class="bestsellers">
+  <div class="bestsellers-inner">
+    <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Most Popular</span></div>
+    <div class="sec-head">
+      <h2 class="sec-title">Stamps & <em>Alphabets</em></h2>
+      <a href="#" class="view-all">View All Stamps →</a>
+    </div>
+    <div class="prod-grid">
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670" alt="Custom Leather Stamps">
+          <div class="p-badge custom">Custom</div>
+          <div class="p-wish">♡</div>
+          <div class="p-cta">Order Now</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Custom Stamps</div>
+          <div class="p-name">Custom Leather Stamps — Maker's Mark</div>
+          <div class="p-desc">Send us your logo or design. We make it in solid brass, usable hot and cold.</div>
+          <div class="p-price-row"><span class="p-price">From $57</span></div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/products/IMG_9840_480x480.jpg?v=1670633582" alt="Custom Alphabet Stamp Sets">
+          <div class="p-badge custom">Custom</div>
+          <div class="p-wish">♡</div>
+          <div class="p-cta">Order Now</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Alphabet Sets</div>
+          <div class="p-name">Custom Alphabet Stamp Sets</div>
+          <div class="p-desc">Choose your font and size. Perfect for client initials and personalization.</div>
+          <div class="p-price-row"><span class="p-price">From $196</span></div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/products/ADAPTER_480x480.jpg?v=1652179310" alt="Stamp Holder">
+          <div class="p-wish">♡</div>
+          <div class="p-cta">Add to Cart</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Accessories</div>
+          <div class="p-name">Stamp Holder for Leather Stamping Press</div>
+          <div class="p-desc">Brass adapter for WT-90DS and Vevor-type hot press. Fits all AM stamps.</div>
+          <div class="p-price-row"><span class="p-price">$115</span></div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/KEY_RINGS_480x480.jpg?v=1712651088" alt="Key Rings Cutting Dies">
+          <div class="p-wish">♡</div>
+          <div class="p-cta">View Product</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Cutting Dies — Key Rings</div>
+          <div class="p-name">Cutting Dies for Key Rings</div>
+          <div class="p-desc">Multiple sizes and shapes. Cut consistent key rings every time.</div>
+          <div class="p-price-row"><span class="p-price">From $105</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM ORDER CTA -->
+<div class="custom-section">
+  <div class="custom-content">
+    <div class="sec-tag" style="margin-bottom:var(--s4)">Bespoke Service</div>
+    <h2 class="custom-title">Custom Made<br><em>for You</em></h2>
+    <p class="custom-body">Have a specific design in mind? Send us a picture or let us design a logo for you. We create custom stamps and cutting dies to your exact specification — used by professional leatherworkers worldwide.</p>
+    <div class="custom-steps">
+      <div class="custom-step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-text-title">Send Your Design</div>
+          <div class="step-text-desc">Email us a picture, logo, or describe what you need.</div>
+        </div>
+      </div>
+      <div class="custom-step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-text-title">We Confirm & Quote</div>
+          <div class="step-text-desc">We'll send a proof and confirmed pricing before production.</div>
+        </div>
+      </div>
+      <div class="custom-step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-text-title">Receive Your Tool</div>
+          <div class="step-text-desc">Your custom brass stamp or steel die, shipped to your door.</div>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn-primary" style="display:inline-block;width:fit-content">Request a Custom Order</a>
+  </div>
+  <div class="custom-img">
+    <img src="https://am-leathercraft.com/cdn/shop/files/Wrap_Dies_ShopifyThumbnail_480x480.png?v=1747674029" alt="Custom Dies">
+    <div class="custom-img-overlay"></div>
+  </div>
+</div>
+
+<!-- PATTERNS SECTION -->
+<section class="section" style="background:var(--off-black);max-width:100%;padding:var(--s20) 0">
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--s12)">
+    <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Digital Downloads</span></div>
+    <div class="sec-head">
+      <h2 class="sec-title">PDF <em>Patterns</em></h2>
+      <a href="#" class="view-all">Browse All Patterns →</a>
+    </div>
+    <div class="prod-grid">
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/COVERRENDEREtsyThumbnailcopy_41c9cff6-1bba-4dfd-b1b0-fbea9c683020_480x480.jpg?v=1694945759" alt="Watch Straps Bundle">
+          <div class="p-badge sale">72% Off</div>
+          <div class="p-wish">♡</div>
+          <div class="p-cta">Download Now</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Pattern Bundle — Watch Straps</div>
+          <div class="p-name">The Big Watch Straps PDF Bundle</div>
+          <div class="p-desc">36 patterns covering versatile strap styles with video tutorials.</div>
+          <div class="p-price-row">
+            <span class="p-price">$49</span>
+            <span class="p-orig">$170</span>
+            <span class="p-save">Save 71%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/Origami_CoinCase_92238788-d6f3-413e-9261-653c18c80173_480x480.jpg?v=1700722611" alt="Origami Coin Pouch">
+          <div class="p-badge pdf">PDF</div>
+          <div class="p-wish">♡</div>
+          <div class="p-cta">View Pattern</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Patterns — Coin Pouches</div>
+          <div class="p-name">Cutting Die Set — Origami Coin Pouch</div>
+          <div class="p-desc">Stitchless design. Elegant and impressive origami fold technique.</div>
+          <div class="p-price-row"><span class="p-price">$114</span></div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/ShopifyThumbnail_SlimWallet_Dies_480x480.png?v=1747669998" alt="Slim Wallet">
+          <div class="p-badge sale">Sale</div>
+          <div class="p-wish">♡</div>
+          <div class="p-cta">View Pattern</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Cutting Dies — Wallets</div>
+          <div class="p-name">Cutting Die Set — Slim Wallet</div>
+          <div class="p-desc">Everything you need for a clean, professional slim wallet every time.</div>
+          <div class="p-price-row">
+            <span class="p-price">$124</span>
+            <span class="p-orig">$135</span>
+            <span class="p-save">Save 8%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-img-wrap">
+          <img class="p-img" src="https://am-leathercraft.com/cdn/shop/files/Wrap_Dies_ShopifyThumbnail_480x480.png?v=1747674029" alt="Wrap Card Holder">
+          <div class="p-wish">♡</div>
+          <div class="p-cta">View Pattern</div>
+        </div>
+        <div class="p-info">
+          <div class="p-cat">Cutting Dies — Card Holders</div>
+          <div class="p-name">Cutting Die Set — Wrap Card Holder</div>
+          <div class="p-desc">Precise wrap-style card holder die — a clean, timeless design.</div>
+          <div class="p-price-row"><span class="p-price">$114</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Trusted by Craftspeople</span></div>
+  <div class="sec-head">
+    <h2 class="sec-title">From the <em>Workshop</em></h2>
+    <span style="font-family:var(--font-display);font-size:16px;color:var(--muted);font-style:italic">★★★★★ 5.0</span>
+  </div>
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-quote">"</div>
+      <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="test-text">"The cutting dies are exceptional quality. I've tried other suppliers and nothing comes close to the precision of AM Leathercraft's Japanese steel dies. My watch strap production time has halved."</p>
+      <div class="test-author">
+        <div class="test-av">TK</div>
+        <div>
+          <div class="test-name">Thomas K.</div>
+          <div class="test-product">Cutting Die Set — Watch Strap</div>
+        </div>
+        <div class="test-check">✓ Verified</div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-quote">"</div>
+      <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="test-text">"Ordered a custom stamp with my maker's mark. The communication was fast, the proof came back exactly right, and the brass quality is solid. Marks on leather beautifully both hot and cold."</p>
+      <div class="test-author">
+        <div class="test-av">MR</div>
+        <div>
+          <div class="test-name">Marie R.</div>
+          <div class="test-product">Custom Leather Stamp — Maker's Mark</div>
+        </div>
+        <div class="test-check">✓ Verified</div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-quote">"</div>
+      <div class="test-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="test-text">"The Big Bundle is absurd value. 60 patterns, video tutorials for each, extremely detailed. I've been leatherworking for 8 years and still found new techniques in there. Worth ten times the price."</p>
+      <div class="test-author">
+        <div class="test-av">JB</div>
+        <div>
+          <div class="test-name">James B.</div>
+          <div class="test-product">The Big Leather Goods PDF Bundle</div>
+        </div>
+        <div class="test-check">✓ Verified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-section">
+  <div class="nl-inner">
+    <div class="nl-eyebrow">The AM Leathercraft Workshop</div>
+    <h2 class="nl-title">Tips, New Tools &<br><em>Free Patterns</em></h2>
+    <p class="nl-desc">Join thousands of leatherworkers who get our workshop updates — new patterns, tutorials, tool releases, and exclusive offers.</p>
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="Your email address">
+      <button class="nl-btn">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="f-logo-main">AM<span>·</span>Leathercraft</a>
+        <span class="f-logo-sub">Custom Stamps · Cutting Dies · Patterns</span>
+        <p class="f-desc">Professional leatherworking tools and supplies — designed by a craftsman, for craftsmen. Custom orders welcome. Ships worldwide.</p>
+        <div class="f-socials">
+          <a href="https://www.instagram.com/amleathercraft/" class="f-soc">IG</a>
+          <a href="https://www.facebook.com/A.M.leathercraft/" class="f-soc">FB</a>
+          <a href="https://www.youtube.com/channel/UCVSnW_AFug4Em1bcxEEEBAw" class="f-soc">YT</a>
+          <a href="https://twitter.com/AMLeathercraft" class="f-soc">TW</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Shop</div>
+        <ul class="f-links">
+          <li><a href="#">Stamps & Alphabets</a></li>
+          <li><a href="#">Cutting Dies — Stock</a></li>
+          <li><a href="#">Custom Dies</a></li>
+          <li><a href="#">Leather Tools</a></li>
+          <li><a href="#">PDF Patterns</a></li>
+          <li><a href="#">Big Bundles</a></li>
+          <li><a href="#">Free Patterns</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Patterns</div>
+        <ul class="f-links">
+          <li><a href="#">Wallets</a></li>
+          <li><a href="#">Card Holders</a></li>
+          <li><a href="#">Coin Pouches</a></li>
+          <li><a href="#">Bags</a></li>
+          <li><a href="#">Watch Straps</a></li>
+          <li><a href="#">Cases & Sleeves</a></li>
+          <li><a href="#">Custom Templates</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Help</div>
+        <ul class="f-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-copy">© 2026 AM Leathercraft. All rights reserved. Powered by Shopify.</div>
+      <div class="f-pays">
+        <span class="f-pay">PayPal</span>
+        <span class="f-pay">Visa</span>
+        <span class="f-pay">Mastercard</span>
+        <span class="f-pay">Amex</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     DESIGN SPECIFICATION
+     ============================================================ -->
+<div class="spec-section">
+  <div class="spec-inner">
+    <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Design System</span></div>
+    <h2 class="sec-title" style="margin-bottom:var(--s4)">AM Leathercraft — <em>UI Specification</em></h2>
+    <p style="font-size:13px;color:var(--muted);max-width:500px;line-height:1.8;letter-spacing:0.04em">Industrial craft aesthetic. Dark leather tones, warm brass accents, IBM Plex Sans for precision, Libre Baskerville for warmth. Conversion-focused layout built for a specialist B2B audience.</p>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-title-sm">Color Palette</div>
+        <div class="swatch"><div class="sw-circle" style="background:#0d0b09"></div><div><div class="sw-name">Black</div><div class="sw-hex">#0d0b09 — Background</div></div></div>
+        <div class="swatch"><div class="sw-circle" style="background:#b8913a"></div><div><div class="sw-name">Brass</div><div class="sw-hex">#b8913a — Accent / CTA</div></div></div>
+        <div class="swatch"><div class="sw-circle" style="background:#f5f0e8"></div><div><div class="sw-name">White</div><div class="sw-hex">#f5f0e8 — Text</div></div></div>
+        <div class="swatch"><div class="sw-circle" style="background:#1a1714"></div><div><div class="sw-name">Card</div><div class="sw-hex">#1a1714 — Cards</div></div></div>
+        <div class="swatch"><div class="sw-circle" style="background:#9a4020"></div><div><div class="sw-name">Rust</div><div class="sw-hex">#9a4020 — Custom badge</div></div></div>
+        <div class="swatch"><div class="sw-circle" style="background:#2a2520"></div><div><div class="sw-name">Border</div><div class="sw-hex">#2a2520 — Borders</div></div></div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-title-sm">Typography</div>
+        <div style="margin-bottom:var(--s5)">
+          <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Display — Libre Baskerville</div>
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--white);line-height:1.05">Craft with<br><em style="color:var(--brass-light)">Precision</em></div>
+        </div>
+        <div style="margin-bottom:var(--s5)">
+          <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Body — IBM Plex Sans 300</div>
+          <div style="font-family:var(--font-body);font-size:13px;font-weight:300;color:var(--muted);line-height:1.7;letter-spacing:0.04em">Clean, technical body copy for a specialist audience.</div>
+        </div>
+        <div>
+          <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Label — IBM Plex Sans 500</div>
+          <div style="font-family:var(--font-body);font-size:10px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--brass)">CATEGORY LABEL</div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-title-sm">Spacing System</div>
+        <div style="display:flex;flex-direction:column;gap:var(--s3)">
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:4px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">4px — micro</span></div>
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:8px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">8px — tight</span></div>
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:16px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">16px — base</span></div>
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:24px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">24px — card</span></div>
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:48px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">48px — section</span></div>
+          <div style="display:flex;align-items:center;gap:var(--s4)"><div style="width:80px;height:14px;background:var(--brass);opacity:0.6"></div><span style="font-size:10px;color:var(--muted)">80px — section pad</span></div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-title-sm">UI Components</div>
+        <div style="display:flex;flex-direction:column;gap:var(--s5)">
+          <div>
+            <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Buttons</div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="background:var(--brass);color:var(--black);padding:10px 20px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;cursor:pointer;display:inline-block;width:fit-content">Shop Now</div>
+              <div style="background:transparent;border:1.5px solid var(--border-mid);color:var(--white);padding:9px 20px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;cursor:pointer;display:inline-block;width:fit-content">Custom Order</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Badges</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <span style="background:var(--brass);color:var(--black);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;font-weight:600">New</span>
+              <span style="background:var(--rust);color:var(--white);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;font-weight:600">Custom</span>
+              <span style="background:var(--green);color:var(--white);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;font-weight:600">Sale</span>
+              <span style="background:var(--steel);color:var(--white);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;font-weight:600">PDF</span>
+            </div>
+          </div>
+          <div style="font-size:10px;color:var(--muted);line-height:1.8;letter-spacing:0.04em">
+            Nav: 70px · Grid: 4 col / 3px gap<br>
+            Product ratio: 1:1 · Card bg: #1a1714<br>
+            Max width: 1440px · Base: 4pt scale<br>
+            Hero: 1.1fr / 0.9fr split
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE SECTION -->
+<div class="mobile-section">
+  <div class="mobile-inner">
+    <div class="sec-label"><div class="sec-line"></div><span class="sec-tag">Responsive Design</span></div>
+    <h2 class="sec-title" style="margin-bottom:var(--s10)">Mobile <em>Experience</em></h2>
+    <div class="mobile-grid">
+      <div>
+        <h3 class="mobile-desc-title">Optimised for Every <em>Device</em></h3>
+        <p class="mobile-body">The same premium experience on desktop, tablet and mobile. Leatherworkers browse and order on their phones — the layout is built for that reality.</p>
+        <div class="mobile-specs">
+          <div class="mob-spec">Single-column product grid on mobile</div>
+          <div class="mob-spec">Sticky nav with logo, search & cart</div>
+          <div class="mob-spec">Hero stacks vertically, full-width image</div>
+          <div class="mob-spec">Category grid scrolls horizontally</div>
+          <div class="mob-spec">Bundle banner stacks image above content</div>
+          <div class="mob-spec">Sticky Add to Cart on product detail pages</div>
+          <div class="mob-spec">Footer collapses to accordion on mobile</div>
+          <div class="mob-spec">Touch-optimised 44px minimum tap targets</div>
+        </div>
+      </div>
+      <div class="phones">
+        <!-- Phone 1 — Homepage -->
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-nav">
+              <span style="font-size:11px;color:var(--muted)">☰</span>
+              <span class="ph-logo">AM<span>·</span>LC</span>
+              <span style="font-size:12px;color:var(--muted)">🛍</span>
+            </div>
+            <div class="ph-hero">
+              <img src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670" alt="">
+              <div class="ph-hero-overlay"></div>
+              <div class="ph-hero-text">
+                <div class="ph-htag">Precision Tools</div>
+                <div class="ph-htitle">Craft with<br><em style="color:var(--brass-light)">Precision</em></div>
+              </div>
+            </div>
+            <div class="ph-content">
+              <div class="ph-sec">Featured Products</div>
+              <div class="ph-pgrid">
+                <div class="ph-p">
+                  <div class="ph-pimg"><img src="https://am-leathercraft.com/cdn/shop/files/Watchstraps_1_480x480.jpg?v=1693791369" alt=""></div>
+                  <div class="ph-pinfo"><div class="ph-pname">Watch Strap Die Set</div><div class="ph-pprice">From $125</div></div>
+                </div>
+                <div class="ph-p">
+                  <div class="ph-pimg"><img src="https://am-leathercraft.com/cdn/shop/files/COVERRENDERcopy_c3f8b176-d956-41d9-a438-ef8bf7981872_480x480.jpg?v=1694945542" alt=""></div>
+                  <div class="ph-pinfo"><div class="ph-pname">Big Bundle — 60 Patterns</div><div class="ph-pprice">$97</div></div>
+                </div>
+                <div class="ph-p">
+                  <div class="ph-pimg"><img src="https://am-leathercraft.com/cdn/shop/files/HorizontalandVerticalcardpocketClickingdieset_480x480.jpg?v=1682843217" alt=""></div>
+                  <div class="ph-pinfo"><div class="ph-pname">Wallet Pocket Dies</div><div class="ph-pprice">From $105</div></div>
+                </div>
+                <div class="ph-p">
+                  <div class="ph-pimg"><img src="https://am-leathercraft.com/cdn/shop/products/IMG_9840_480x480.jpg?v=1670633582" alt=""></div>
+                  <div class="ph-pinfo"><div class="ph-pname">Alphabet Stamp Sets</div><div class="ph-pprice">From $196</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 2 — Product Page -->
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-nav">
+              <span style="font-size:11px;color:var(--muted)">←</span>
+              <span class="ph-logo">AM<span>·</span>LC</span>
+              <span style="font-size:12px;color:var(--muted)">♡</span>
+            </div>
+            <div style="height:170px;overflow:hidden;background:var(--card)">
+              <img src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.7)" alt="">
+            </div>
+            <div style="padding:10px 12px;flex:1;background:var(--card)">
+              <div style="font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass);margin-bottom:3px">Custom Stamps</div>
+              <div style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--white);margin-bottom:5px;line-height:1.3">Custom Leather Stamps — Maker's Mark</div>
+              <div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:5px">From $57</div>
+              <div style="font-size:8px;color:var(--muted);margin-bottom:8px;line-height:1.5">Solid brass. Hot & cold use. Send us your logo or design.</div>
+              <div style="background:var(--brass);color:var(--black);text-align:center;padding:9px;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;margin-bottom:4px">Order Now</div>
+              <div style="border:1px solid var(--border-mid);text-align:center;padding:8px;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--white)">View Details</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 3 — Collections -->
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-nav">
+              <span style="font-size:11px;color:var(--muted)">☰</span>
+              <span class="ph-logo">AM<span>·</span>LC</span>
+              <span style="font-size:12px;color:var(--muted)">🛍</span>
+            </div>
+            <div style="padding:10px 12px;flex:1;background:var(--black);overflow:hidden">
+              <div style="font-size:7px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass);margin-bottom:3px">Categories</div>
+              <div style="font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px">Shop by Category</div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="height:56px;background:var(--card);position:relative;overflow:hidden;border:1px solid var(--border)">
+                  <img src="https://am-leathercraft.com/cdn/shop/products/chrisdkent_gmail_571a56b9-95cc-4162-8e26-6837b4cc7500_480x480.jpg?v=1747465670" style="width:100%;height:100%;object-fit:cover;opacity:0.5" alt="">
+                  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 10px;background:rgba(13,11,9,0.5)">
+                    <div>
+                      <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--white)">Custom Stamps</div>
+                      <div style="font-size:7px;color:var(--brass);letter-spacing:0.12em;text-transform:uppercase">From $57</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="height:56px;background:var(--card);position:relative;overflow:hidden;border:1px solid var(--border)">
+                  <img src="https://am-leathercraft.com/cdn/shop/files/Watchstraps_1_480x480.jpg?v=1693791369" style="width:100%;height:100%;object-fit:cover;opacity:0.5" alt="">
+                  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 10px;background:rgba(13,11,9,0.5)">
+                    <div>
+                      <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--white)">Cutting Dies</div>
+                      <div style="font-size:7px;color:var(--brass);letter-spacing:0.12em;text-transform:uppercase">From $105</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="height:56px;background:var(--card);position:relative;overflow:hidden;border:1px solid var(--border)">
+                  <img src="https://am-leathercraft.com/cdn/shop/files/COVERRENDERcopy_c3f8b176-d956-41d9-a438-ef8bf7981872_480x480.jpg?v=1694945542" style="width:100%;height:100%;object-fit:cover;opacity:0.5" alt="">
+                  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 10px;background:rgba(13,11,9,0.5)">
+                    <div>
+                      <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--white)">Big Bundle — 60 Patterns</div>
+                      <div style="font-size:7px;color:var(--brass);letter-spacing:0.12em;text-transform:uppercase">$97 (was $350)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
